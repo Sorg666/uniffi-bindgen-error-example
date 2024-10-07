@@ -1,14 +1,9 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+uniffi::include_scaffolding!("lib");
+
+pub struct Something {
+    pub name: String,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn return_something() -> Something {
+    Something { name: String::from("Hello") }
 }
